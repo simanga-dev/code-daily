@@ -1,7 +1,7 @@
 :root {
   --bg-color: #191b1d;
   --fg-color: #22262c;
-  --accent-color: #bc1e4a;
+  --accent-color: rgb(188, 30, 74);
   --white: rgba(255, 255, 255, 0.875);
 }
 
@@ -31,8 +31,9 @@ body {
 }
 .current-plan div {
   background-color: var(--accent-color);
-  padding: 1.5rem 6rem;
+  padding: 1.5rem 1rem;
   text-align: center;
+  width: 22rem;
   line-height: 1.65;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -86,9 +87,18 @@ body {
   transform: translate3d(2rem, -50%, 0);
 }
 .card {
+  cursor: pointer;
   border-radius: 8px;
   background: var(--fg-color);
   padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.card.active {
+  box-shadow: 0 5px 20px rgba(188, 30, 74, 0.1);
+}
+.card.active button {
+  background-color: var(--accent-color);
 }
 .card h3 {
   font-size: 1.5rem;
@@ -159,5 +169,7 @@ ul li.mau::before {
   border-radius: 5px;
   font-size: 1.125rem;
   color: var(--white);
+  transition: all 0.3s ease;
   border: 1px solid var(--accent-color);
+  margin-top: auto;
 }
